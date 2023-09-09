@@ -29,6 +29,18 @@ class LoggerMiddleware implements MiddlewareInterface
         $loggerDTO = $this->loggerDTOAssembler->create($request, $response);
         $this->loggerService->log($loggerDTO);
 
+        $headers = [
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Max-Age' => '86400',
+            'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With'
+        ];
+
+        foreach($headers as $key => $value) {
+            $response->header($key, $value);
+        }
+
         return $response;
     }
 }
