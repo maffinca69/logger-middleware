@@ -1,10 +1,10 @@
 <?php
 
-namespace Services\Logger\Assembler;
+namespace Maffinca69\Logger\Services\Logger\Assembler;
 
-use App\Services\Logger\DTO\LoggerDTO;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Maffinca69\Logger\Services\Logger\DTO\LoggerDTO;
 
 class LoggerDTOAssembler
 {

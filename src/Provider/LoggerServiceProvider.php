@@ -1,10 +1,10 @@
 <?php
 
-namespace Provider;
+namespace Maffinca69\Logger\Provider;
 
 use Illuminate\Support\ServiceProvider;
+use Maffinca69\Logger\Services\EventBus\PortAdapter\RabbitMQ\RabbitMQService;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
-use Services\EventBus\PortAdapter\RabbitMQ\RabbitMQService;
 
 class LoggerServiceProvider extends ServiceProvider
 {

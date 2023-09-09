@@ -1,11 +1,11 @@
 <?php
 
-namespace Middleware;
+namespace Maffinca69\Logger\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Services\Logger\Assembler\LoggerDTOAssembler;
-use Services\Logger\LoggerService;
+use Maffinca69\Logger\Services\Logger\Assembler\LoggerDTOAssembler;
+use Maffinca69\Logger\Services\Logger\LoggerService;
 
 class LoggerMiddleware implements MiddlewareInterface
 {

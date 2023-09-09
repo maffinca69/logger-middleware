@@ -1,14 +1,14 @@
 <?php
 
-namespace Services\EventBus\PortAdapter\RabbitMQ;
+namespace Maffinca69\Logger\Services\EventBus\PortAdapter\RabbitMQ;
 
 use Illuminate\Support\Facades\Log;
+use Maffinca69\Logger\Services\EventBus\EventBusInterface;
+use Maffinca69\Logger\Services\EventBus\HandlerInterface;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 use PhpAmqpLib\Exception\AMQPTimeoutException;
 use PhpAmqpLib\Message\AMQPMessage;
-use Services\EventBus\EventBusInterface;
-use Services\EventBus\HandlerInterface;
 
 class RabbitMQService implements EventBusInterface
 {

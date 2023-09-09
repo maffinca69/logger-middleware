@@ -1,6 +1,6 @@
 <?php
 
-namespace Middleware;
+namespace Maffinca69\Logger\Middleware;
 
 use Illuminate\Http\Request;
 

@@ -1,11 +1,10 @@
 <?php
 
-namespace Services\Logger;
+namespace Maffinca69\Logger\Services\Logger;
 
-
-use Services\EventBus\PortAdapter\RabbitMQ\RabbitMQService;
-use Services\Logger\DTO\LoggerDTO;
-use Services\Logger\Formatter\LoggerFormatter;
+use Maffinca69\Logger\Services\EventBus\PortAdapter\RabbitMQ\RabbitMQService;
+use Maffinca69\Logger\Services\Logger\DTO\LoggerDTO;
+use Maffinca69\Logger\Services\Logger\Formatter\LoggerFormatter;
 
 class LoggerService
 {

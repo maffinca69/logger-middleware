@@ -1,6 +1,6 @@
 <?php
 
-namespace Services\EventBus;
+namespace Maffinca69\Logger\Services\EventBus;
 
 interface HandlerInterface
 {

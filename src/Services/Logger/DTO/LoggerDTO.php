@@ -1,6 +1,6 @@
 <?php
 
-namespace Services\Logger\DTO;
+namespace Maffinca69\Logger\Services\Logger\DTO;
 
 
 class LoggerDTO

@@ -1,8 +1,8 @@
 <?php
 
-namespace Services\Logger\Formatter;
+namespace Maffinca69\Logger\Services\Logger\Formatter;
 
-use Services\Logger\DTO\LoggerDTO;
+use Maffinca69\Logger\Services\Logger\DTO\LoggerDTO;
 
 class LoggerFormatter
 {
