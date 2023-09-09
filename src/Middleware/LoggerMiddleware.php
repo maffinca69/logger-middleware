@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Maffinca69\Logger\Services\Logger\Assembler\LoggerDTOAssembler;
 use Maffinca69\Logger\Services\Logger\LoggerService;
+use Symfony\Component\HttpFoundation\Request as RequestAlias;
 
 class LoggerMiddleware implements MiddlewareInterface
 {
@@ -23,6 +24,10 @@ class LoggerMiddleware implements MiddlewareInterface
      */
     public function handle(Request $request, \Closure|Closure $next, string $guard = null): mixed
     {
+        if ($request->isMethod(RequestAlias::METHOD_OPTIONS)) {
+            return response()->json(['method' => RequestAlias::METHOD_OPTIONS], 200, $headers);
+        }
+
         /** @var Response $response */
         $response = $next($request);
 
