@@ -1,9 +1,11 @@
 <?php
 
-use App\Services\Logger\Assembler\LoggerDTOAssembler;
-use App\Services\Logger\LoggerService;
+namespace Middleware;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Services\Logger\Assembler\LoggerDTOAssembler;
+use Services\Logger\LoggerService;
 
 class LoggerMiddleware implements MiddlewareInterface
 {
@@ -13,7 +15,13 @@ class LoggerMiddleware implements MiddlewareInterface
     ) {
     }
 
-    public function handle(Request $request, Closure $next, string $guard = null): mixed
+    /**
+     * @param Request $request
+     * @param \Closure|Closure $next
+     * @param string|null $guard
+     * @return mixed
+     */
+    public function handle(Request $request, \Closure|Closure $next, string $guard = null): mixed
     {
         /** @var Response $response */
         $response = $next($request);

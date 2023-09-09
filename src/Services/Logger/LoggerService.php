@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Services\Logger;
+namespace Services\Logger;
 
-use App\Services\EventBus\PortAdapter\RabbitMQ\RabbitMQService;
-use App\Services\Logger\DTO\LoggerDTO;
-use App\Services\Logger\Formatter\LoggerFormatter;
+
+use Services\EventBus\PortAdapter\RabbitMQ\RabbitMQService;
+use Services\Logger\DTO\LoggerDTO;
+use Services\Logger\Formatter\LoggerFormatter;
 
 class LoggerService
 {

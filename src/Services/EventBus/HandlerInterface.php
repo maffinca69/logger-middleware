@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\EventBus;
+namespace Services\EventBus;
 
 interface HandlerInterface
 {

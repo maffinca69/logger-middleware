@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Logger\Formatter;
+namespace Services\Logger\Formatter;
 
-use App\Services\Logger\DTO\LoggerDTO;
+use Services\Logger\DTO\LoggerDTO;
 
 class LoggerFormatter
 {

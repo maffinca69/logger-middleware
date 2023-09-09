@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Logger\DTO;
+namespace Services\Logger\DTO;
 
 
 class LoggerDTO

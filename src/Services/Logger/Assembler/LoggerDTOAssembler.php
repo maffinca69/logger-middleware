@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Logger\Assembler;
+namespace Services\Logger\Assembler;
 
 use App\Services\Logger\DTO\LoggerDTO;
 use Illuminate\Http\Request;

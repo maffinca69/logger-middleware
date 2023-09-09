@@ -1,5 +1,7 @@
 <?php
 
+namespace Middleware;
+
 use Illuminate\Http\Request;
 
 interface MiddlewareInterface
