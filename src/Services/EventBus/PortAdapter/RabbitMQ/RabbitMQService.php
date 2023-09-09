@@ -17,6 +17,10 @@ class RabbitMQService implements EventBusInterface
         DEFAULT_COMPRESSION_LEVEL = 1,
         CONTENT_TYPE_GZCOMPRESSED = 'text/gzcompressed';
 
+    /**
+     * @param AMQPStreamConnection $connection
+     * @param HandlerInterface|null $handler
+     */
     public function __construct(
         private readonly AMQPStreamConnection $connection,
         private ?HandlerInterface $handler = null,
@@ -57,6 +61,11 @@ class RabbitMQService implements EventBusInterface
         return true;
     }
 
+    /**
+     * @param HandlerInterface $handler
+     * @return void
+     * @throws \Exception
+     */
     public function subscribe(HandlerInterface $handler): void
     {
         $this->handler = $handler;
@@ -72,15 +81,16 @@ class RabbitMQService implements EventBusInterface
         }
     }
 
+    /**
+     * @return void
+     * @throws \Exception
+     */
     protected function subscribeInternal(): void
     {
         $channel = $this->connection->channel();
 
         $channel->queue_declare('logger', false, true, false, false);
-
         $channel->queue_bind('logger', 'logger');
-
-        // эта настройка равномерно распределяет нагрузку на воркеры, отправляет по 1 сообщению на каждый воркер
         $channel->basic_qos(0, 1, false);
 
         // подключает $handler к каналу

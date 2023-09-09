@@ -10,6 +10,11 @@ class LoggerDTOAssembler
 {
     private const DEFAULT_APP_NAME = 'unknown';
 
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return LoggerDTO
+     */
     public function create(Request $request, Response $response): LoggerDTO
     {
         return new LoggerDTO(
