@@ -2,9 +2,9 @@
 
 namespace Maffinca69\Logger\Services\Logger\Assembler;
 
-use Illuminate\Http\Response;
 use Maffinca69\Logger\Services\Logger\DTO\LoggerDTO;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class LoggerDTOAssembler
 {
@@ -20,7 +20,7 @@ class LoggerDTOAssembler
         return new LoggerDTO(
             appName: $this->getApplicationName(),
             request: json_encode($request->request->all()),
-            response: $response->getContent(),
+            response: $response->getContent() ?: '',
             ip: $request->getClientIp(),
             userAgent: $request->headers->get('User-Agent', 'Unknown'),
             pid: sha1(time()),
